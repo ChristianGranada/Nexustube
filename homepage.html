@@ -8,9 +8,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+
+
+
     body {
       background-color: #0b1a2a;
       color: #c7d5e0;
+    }
+
+    .header {
+      background-image: url('https://educayjuega.wordpress.com/wp-content/uploads/2017/04/videojuegos-lista-time-1.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 150px;
+      position: relative;
+    }
+
+    .header-overlay {
+      backdrop-filter: blur(4px);
+      background: rgba(11, 26, 42, 0.5);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 60px;
+      border-radius: 10px;
     }
 
     .left-bar, .right-bar {
@@ -98,6 +123,58 @@
   box-shadow: 0 0 15px rgba(0, 140, 255, 0.15);
   height: 100%;
     }
+
+.post img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  background-color: #0b1a2a;
+}
+
+
+.post {
+  position: relative; /* 👈 clave para que la animación funcione dentro */
+  overflow: hidden;
+}
+
+.action-btn {
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+}
+
+/* ❤️ animación dentro del post */
+.like-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 60px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.like-animation.show {
+  animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+
+.action-btn {
+  cursor: pointer;
+  user-select: none; 
+  text-decoration: none; 
+}
+
   </style>
 
 
@@ -105,6 +182,22 @@
 </head>
 
 <body>
+
+<div class="header">
+
+  <div class="header-overlay">
+
+    <div class="d-flex align-items-center">
+
+      <img src="https://img.freepik.com/vector-premium/ilustracion-diseno-insignia-mano-que-sostiene-joystick_1281743-4019.jpg?w=360" class="logo">
+
+      <h2 class="ms-3">NexusTube</h2>
+
+    </div>
+
+  </div>
+
+</div>
 
 <div class="container-fluid">
   <div class="row">
@@ -131,33 +224,272 @@
 
     <!-- CENTRO -->
   <div class="col-md-7 main-container">
-    
+
   <div class="section-box">
 
     <div class="mb-4">
       <input type="text" class="form-control" placeholder="Buscar en NexusTube...">
     </div>
 
-      <!-- POSTS -->
-      <div class="post">
-        <h6>@pro_player</h6>
-        <p>Warzone ya no es lo que era… demasiados hackers 😑</p>
-      </div>
 
-      <div class="post">
-        <h6>@ranked_grinder</h6>
-        <p>Subí a Diamante en Valorant 🔥 puro aim y disciplina</p>
-      </div>
+<!-- POST 1 -->
+<div class="post">
+  <img src="https://preview.redd.it/i-think-phonix-flashed-too-hard-v0-oz1p4voo30651.jpg?width=1200&format=pjpg&auto=webp&s=1275dba3984f607a4c61faa9a90559aeff4a2ec2">
 
-      <div class="post">
-        <h6>@meme_gamer</h6>
-        <p>"Una última partida" - 4:00am 🤡</p>
-      </div>
+  <div class="post-content">
+    <h6>@entry_fragger</h6>
+    <p>Phoenix en mi equipo siempre flashea… pero a nosotros 💀</p>
 
-      <div class="post">
-        <h6>@retro_lord</h6>
-        <p>Skyrim en 2026 sigue siendo mejor que muchos AAA actuales 🐐</p>
-      </div>
+    <div class="d-flex gap-3 mt-2">
+     <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2" placeholder="Escribe un comentario...">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 2 -->
+<div class="post">
+  <div class="post-content">
+    <h6>@fps_hunter</h6>
+    <p>Pasé de 60 a 144hz… no hay vuelta atrás</p>
+
+    <div class="d-flex gap-3 mt-2">
+      <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 3 -->
+<div class="post">
+  <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/821/581/4cf.jpg">
+
+  <div class="post-content">
+    <h6>@gulag_survivor</h6>
+    <p>Yo confiando en mis reflejos vs el man que ya me estaba pre-apuntando 💀</p>
+
+    <div class="d-flex gap-3 mt-2">
+<span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 4 -->
+<div class="post">
+  <div class="post-content">
+    <h6>@dev_mode</h6>
+    <p>Programar de noche pega diferente… silencio + concentración 🔥</p>
+
+    <div class="d-flex gap-3 mt-2">
+    <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 5 -->
+<div class="post">
+  <img src="https://staticdelivery.nexusmods.com/mods/1704/images/75536/75536-1663396704-2008886913.png">
+
+  <div class="post-content">
+    <h6>@dragonborn</h6>
+    <p>Después de 200 horas sigo desviándome de la misión principal…</p>
+
+    <div class="d-flex gap-3 mt-2">
+   <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 6 -->
+<div class="post">
+  <div class="post-content">
+    <h6>@budget_builder</h6>
+    <p>Armar un PC gamer en 2026 es básicamente pelear contra los precios 💀</p>
+
+    <div class="d-flex gap-3 mt-2">
+   <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 7 -->
+<div class="post">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyp3CpZJ_O0kx99yFE-kAveObuvL0tKIE38g&s">
+
+  <div class="post-content">
+    <h6>@tilt_master</h6>
+    <p>"GG easy" — el man que fue 0/10 toda la partida</p>
+
+    <div class="d-flex gap-3 mt-2">
+     <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 8 -->
+<div class="post">
+  <div class="post-content">
+    <h6>@mobile_gamer</h6>
+    <p>La gente subestima el gaming en celular… hasta que te ganan 😏</p>
+
+    <div class="d-flex gap-3 mt-2">
+      <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 9 -->
+<div class="post">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2GJTFcqmEmrJsfDqNbNmhMDyVyPZ3fIaizw&s">
+
+  <div class="post-content">
+    <h6>@no_hit_run</h6>
+    <p>Yo: “este boss se ve fácil”<br>El boss:</p>
+
+    <div class="d-flex gap-3 mt-2">
+   <span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
+
+
+<!-- POST 10 -->
+<div class="post">
+  <div class="post-content">
+    <h6>@update_rage</h6>
+    <p>Actualización de 40GB para arreglar un bug… y salen 3 más 💀</p>
+
+    <div class="d-flex gap-3 mt-2">
+<span onclick="like(this)" class="action-btn">🤍</span>
+<span onclick="repost(this)" class="action-btn">🔁</span>
+<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    </div>
+
+    <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
+
+    <div class="comment-box d-none mt-2">
+      <input type="text" class="form-control mb-2">
+      <button class="btn btn-sm btn-primary" onclick="addComment(this)">Comentar</button>
+      <div class="comments mt-2"></div>
+    </div>
+  </div>
+
+  <div class="like-animation">❤️</div>
+</div>
 
     </div>
 
@@ -213,16 +545,7 @@
   </div>
 </div>
 
-<script>
-  if (localStorage.getItem("logueado") !== "true") {
-    window.location.href = "indexlogin.html";
-  }
-
-  function logout() {
-    localStorage.removeItem("logueado");
-    window.location.href = "indexlogin.html";
-  }
-</script>
+<script src="homepage.js"></script>
 
 </body>
 </html>
