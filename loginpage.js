@@ -7,7 +7,7 @@ function login() {
 
   if (usuario === usuarioCorrecto && password === passwordCorrecto) {
     localStorage.setItem("logueado", "true");
-    window.location.href = "homepage.html";
+    window.location.href = "index.html";
   } else {
     alert("Usuario o contraseña incorrectos");
   }
