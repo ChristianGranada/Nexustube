@@ -6,9 +6,9 @@ function login() {
   const password = document.getElementById("password").value;
 
   if (usuario === usuarioCorrecto && password === passwordCorrecto) {
-  localStorage.setItem("logueado", "true"); // 👈 AÑADE ESTO
-  window.location.href = "homepage.html";
-    } else {
+    localStorage.setItem("logueado", "true");
+    window.location.href = "homepage.html";
+  } else {
     alert("Usuario o contraseña incorrectos");
   }
 }

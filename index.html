@@ -7,177 +7,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-
-
-
-    body {
-      background-color: #0b1a2a;
-      color: #c7d5e0;
-    }
-
-    .header {
-      background-image: url('https://educayjuega.wordpress.com/wp-content/uploads/2017/04/videojuegos-lista-time-1.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 150px;
-      position: relative;
-    }
-
-    .header-overlay {
-      backdrop-filter: blur(4px);
-      background: rgba(11, 26, 42, 0.5);
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .logo {
-      width: 60px;
-      border-radius: 10px;
-    }
-
-    .left-bar, .right-bar {
-      background-color: #171a21;
-      min-height: 100vh;
-      padding: 20px;
-      position: relative;
-    }
-
-    /* PERFIL */
-    .profile-container {
-      position: relative;
-      width: fit-content;
-      margin: auto;
-      cursor: pointer;
-    }
-
-    .profile-img {
-      width: 60px;
-      border-radius: 50%;
-    }
-
-    .profile-menu {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      background: #1b2838;
-      border: 1px solid #2a475e;
-      border-radius: 10px;
-      display: none;
-      min-width: 150px;
-    }
-
-    .profile-menu a {
-      display: block;
-      padding: 10px;
-      color: #c7d5e0;
-      text-decoration: none;
-    }
-
-    .profile-menu a:hover {
-      background: #2a475e;
-    }
-
-    .profile-container:hover .profile-menu {
-      display: block;
-    }
-
-    /* POSTS */
-    .post {
-      background-color: #1b2838;
-      border: 1px solid #2a475e;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 15px;
-    }
-
-    /* JUEGOS */
-    .game-card img {
-      width: 100%;
-      border-radius: 10px;
-      transition: 0.3s;
-      margin-bottom: 10px;
-    }
-
-    .game-card img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #66c0f4;
-    }
-
-    .steam-logo {
-      width: 120px;
-      margin-bottom: 15px;
-    }
-
-    .main-container {
-  padding: 20px;
-    }
-
-  .section-box {
-  background-color: #171a21;
-  border: 1px solid #2a475e;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 140, 255, 0.15);
-  height: 100%;
-    }
-
-.post img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: contain;
-  background-color: #0b1a2a;
-}
-
-
-.post {
-  position: relative; /* 👈 clave para que la animación funcione dentro */
-  overflow: hidden;
-}
-
-.action-btn {
-  cursor: pointer;
-  font-size: 18px;
-  transition: 0.2s;
-}
-
-.action-btn:hover {
-  transform: scale(1.2);
-}
-
-/* ❤️ animación dentro del post */
-.like-animation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  font-size: 60px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.like-animation.show {
-  animation: pop 0.6s ease;
-}
-
-@keyframes pop {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-  50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
-}
-
-
-.action-btn {
-  cursor: pointer;
-  user-select: none; 
-  text-decoration: none; 
-}
-
-  </style>
-
-
+  <link href="index.css" rel="stylesheet">
 
 </head>
 
@@ -202,14 +32,13 @@
 <div class="container-fluid">
   <div class="row">
 
-    <!-- IZQUIERDA (perfil minimalista) -->
+    
   <div class="col-md-2 main-container">
-
   <div class="section-box text-center">
 
     <div class="profile-container">
-      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="profile-img">
-
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLVxh_zr4z9nnFoR88y34xvKjvA9eDD1xK0A&s" class="profile-img">
+      
       <div class="profile-menu text-start">
         <a href="#">Mi perfil</a>
         <a href="#">Configuración</a>
@@ -218,11 +47,42 @@
       </div>
     </div>
 
-  </div>
-  
-  </div>
+    
+    <div class="mt-3">
+      <h6 class="mb-0">KrizAtom</h6>
+      <small class="text-secondary">@nexus_player</small>
+    </div>
 
-    <!-- CENTRO -->
+    
+    <p class="mt-2 small">
+      Gamer 🎮 | Código 💻 | Subiendo de nivel todos los días
+    </p>
+
+    <!-- STATS -->
+    <div class="d-flex justify-content-around mt-3">
+      <div>
+        <strong>42</strong><br>
+        <small>Posts</small>
+      </div>
+      <div>
+        <strong>1.2K</strong><br>
+        <small>Seguidores</small>
+      </div>
+      <div>
+        <strong>180</strong><br>
+        <small>Siguiendo</small>
+      </div>
+    </div>
+
+    <!-- BOTÓN -->
+    <button class="btn btn-outline-info btn-sm mt-3 w-100">
+      Editar perfil
+    </button>
+
+  </div>
+</div>
+
+    
   <div class="col-md-7 main-container">
 
   <div class="section-box">
@@ -232,7 +92,6 @@
     </div>
 
 
-<!-- POST 1 -->
 <div class="post">
   <img src="https://preview.redd.it/i-think-phonix-flashed-too-hard-v0-oz1p4voo30651.jpg?width=1200&format=pjpg&auto=webp&s=1275dba3984f607a4c61faa9a90559aeff4a2ec2">
 
@@ -242,8 +101,9 @@
 
     <div class="d-flex gap-3 mt-2">
      <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+     <span class="like-count">0</span>
+     <span onclick="repost(this)" class="action-btn">🔁</span>
+     <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -259,7 +119,7 @@
 </div>
 
 
-<!-- POST 2 -->
+
 <div class="post">
   <div class="post-content">
     <h6>@fps_hunter</h6>
@@ -267,8 +127,9 @@
 
     <div class="d-flex gap-3 mt-2">
       <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+      <span class="like-count">0</span>
+      <span onclick="repost(this)" class="action-btn">🔁</span>
+      <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -284,7 +145,7 @@
 </div>
 
 
-<!-- POST 3 -->
+
 <div class="post">
   <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/821/581/4cf.jpg">
 
@@ -293,9 +154,10 @@
     <p>Yo confiando en mis reflejos vs el man que ya me estaba pre-apuntando 💀</p>
 
     <div class="d-flex gap-3 mt-2">
-<span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+      <span onclick="like(this)" class="action-btn">🤍</span>
+      <span class="like-count">0</span>
+      <span onclick="repost(this)" class="action-btn">🔁</span>
+      <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -311,7 +173,7 @@
 </div>
 
 
-<!-- POST 4 -->
+
 <div class="post">
   <div class="post-content">
     <h6>@dev_mode</h6>
@@ -319,8 +181,9 @@
 
     <div class="d-flex gap-3 mt-2">
     <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+    <span class="like-count">0</span>
+    <span onclick="repost(this)" class="action-btn">🔁</span>
+    <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -336,7 +199,7 @@
 </div>
 
 
-<!-- POST 5 -->
+
 <div class="post">
   <img src="https://staticdelivery.nexusmods.com/mods/1704/images/75536/75536-1663396704-2008886913.png">
 
@@ -345,9 +208,10 @@
     <p>Después de 200 horas sigo desviándome de la misión principal…</p>
 
     <div class="d-flex gap-3 mt-2">
-   <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+      <span onclick="like(this)" class="action-btn">🤍</span>
+      <span class="like-count">0</span>
+      <span onclick="repost(this)" class="action-btn">🔁</span>
+      <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -363,16 +227,17 @@
 </div>
 
 
-<!-- POST 6 -->
+
 <div class="post">
   <div class="post-content">
     <h6>@budget_builder</h6>
     <p>Armar un PC gamer en 2026 es básicamente pelear contra los precios 💀</p>
 
     <div class="d-flex gap-3 mt-2">
-   <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+      <span onclick="like(this)" class="action-btn">🤍</span>
+      <span class="like-count">0</span>
+      <span onclick="repost(this)" class="action-btn">🔁</span>
+      <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -388,7 +253,7 @@
 </div>
 
 
-<!-- POST 7 -->
+
 <div class="post">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyp3CpZJ_O0kx99yFE-kAveObuvL0tKIE38g&s">
 
@@ -398,8 +263,9 @@
 
     <div class="d-flex gap-3 mt-2">
      <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+     <span class="like-count">0</span>
+     <span onclick="repost(this)" class="action-btn">🔁</span>
+     <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -415,7 +281,7 @@
 </div>
 
 
-<!-- POST 8 -->
+
 <div class="post">
   <div class="post-content">
     <h6>@mobile_gamer</h6>
@@ -423,8 +289,9 @@
 
     <div class="d-flex gap-3 mt-2">
       <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+      <span class="like-count">0</span>
+      <span onclick="repost(this)" class="action-btn">🔁</span>
+      <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -440,7 +307,7 @@
 </div>
 
 
-<!-- POST 9 -->
+
 <div class="post">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2GJTFcqmEmrJsfDqNbNmhMDyVyPZ3fIaizw&s">
 
@@ -449,9 +316,10 @@
     <p>Yo: “este boss se ve fácil”<br>El boss:</p>
 
     <div class="d-flex gap-3 mt-2">
-   <span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+      <span onclick="like(this)" class="action-btn">🤍</span>
+      <span class="like-count">0</span>
+      <span onclick="repost(this)" class="action-btn">🔁</span>
+      <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -467,16 +335,17 @@
 </div>
 
 
-<!-- POST 10 -->
+
 <div class="post">
   <div class="post-content">
     <h6>@update_rage</h6>
     <p>Actualización de 40GB para arreglar un bug… y salen 3 más 💀</p>
 
     <div class="d-flex gap-3 mt-2">
-<span onclick="like(this)" class="action-btn">🤍</span>
-<span onclick="repost(this)" class="action-btn">🔁</span>
-<span onclick="toggleComment(this)" class="action-btn">💬</span>
+      <span onclick="like(this)" class="action-btn">🤍</span>
+      <span class="like-count">0</span>
+      <span onclick="repost(this)" class="action-btn">🔁</span>
+      <span onclick="toggleComment(this)" class="action-btn">💬</span>
     </div>
 
     <div class="repost-msg d-none small text-info mt-1">Reposteado ✔</div>
@@ -495,7 +364,7 @@
 
     </div>
 
-    <!-- DERECHA -->
+    
     <div class="col-md-3 main-container">
   <div class="section-box">
 

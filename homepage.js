@@ -1,34 +1,38 @@
-  if (localStorage.getItem("logueado") !== "true") {
-    window.location.href = "indexlogin.html";
-  }
+if (localStorage.getItem("logueado") !== "true") {
+  window.location.href = "indexlogin.html";
+}
 
-  function logout() {
-    localStorage.removeItem("logueado");
-    window.location.href = "indexlogin.html";
-  }
+function logout() {
+  localStorage.removeItem("logueado");
+  window.location.href = "indexlogin.html";
+}
 
-  function like(element) {
+function like(element) {
   const post = element.closest(".post");
-  const anim = post.querySelector(".like-animation");
+  const animacion = post.querySelector(".like-animation");
+  const contador = post.querySelector(".like-count");
+
+  let count = parseInt(contador.textContent);
 
   const isLiked = element.classList.contains("liked");
 
   if (isLiked) {
-    // quitar like
     element.textContent = "🤍";
     element.classList.remove("liked");
+    count--;
   } else {
-    // dar like
     element.textContent = "❤️";
     element.classList.add("liked");
+    count++;
 
-    // animación solo cuando das like
-    anim.classList.add("show");
+    animacion.classList.add("show");
 
     setTimeout(() => {
-      anim.classList.remove("show");
+      animacion.classList.remove("show");
     }, 600);
   }
+
+  contador.textContent = count;
 }
 
 function repost(element) {
